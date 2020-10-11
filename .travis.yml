@@ -14,8 +14,8 @@ before_install:
   - sudo az aks install-cli
   - sudo az login --service-principal --username "$APP_ID" --tenant "$TENANT_ID" --password service-account.pem
   - sudo az aks get-credentials --resource-group k8s-101 --name multi-cluster
-  - kubectl get pods
-  - kubectl get namespaces
+  - sudo kubectl get pods
+  - sudo kubectl get namespaces
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t kviev/react-test -f ./client/Dockerfile.dev ./client
 
