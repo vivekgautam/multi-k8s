@@ -12,8 +12,8 @@ before_install:
   - sudo apt-get install apt-transport-https
   - sudo apt-get update && sudo apt-get install azure-cli
   - sudo az aks install-cli
-  - az login --service-principal --username "$APP_ID" --tenant "TENANT_ID" --password service-account.pem
-  - az aks get-credentials --resource-group k8s-101 --name multi-cluster
+  - sudo az login --service-principal --username "$APP_ID" --tenant "TENANT_ID" --password service-account.pem
+  - sudo az aks get-credentials --resource-group k8s-101 --name multi-cluster
   - kubectl get pods
   - kubectl get namespaces
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
