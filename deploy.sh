@@ -10,6 +10,7 @@ docker push kviev/multi-client:$SHA
 docker push kviev/multi-server:$SHA
 docker push kviev/multi-worker:$SHA
 
+
 sudo kubectl apply -f k8s
 sudo kubectl set image deployments/server-deployment server=kviev/multi-server:$SHA
 sudo kubectl set image deployments/client-deployment client=kviev/multi-client:$SHA
